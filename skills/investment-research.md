@@ -1,5 +1,105 @@
 # 投资研究：巴菲特-芒格-段永平-李录 四大师综合分析框架
 
+## 🎲 Random Mode（随机模式）
+
+If $ARGUMENTS is exactly the word **random** (case-insensitive), activate Random Mode:
+
+1. **Pick one stock at random** from the list below. Use a timestamp or any entropy source to make the selection genuinely unpredictable — do not always pick the first or last entry.
+
+   **US stocks (100)**:
+   — Tech/Software —
+   Apple, Microsoft, Alphabet, Meta, Adobe, Salesforce, ServiceNow, Workday, Veeva Systems,
+   Synopsys, Cadence Design Systems, PTC Inc, Fair Isaac (FICO), Tyler Technologies,
+   Jack Henry & Associates, Paycom, Datadog, Crowdstrike, Cloudflare, Palo Alto Networks,
+   Fortinet, Arista Networks, Verisign, HubSpot, Paylocity,
+   — Semiconductors —
+   Nvidia, Texas Instruments, Analog Devices, Broadcom, KLA Corp,
+   Lam Research, Applied Materials, Qualcomm, Amphenol,
+   — E-commerce / Platforms —
+   Amazon, Netflix, Booking Holdings, MercadoLibre, Airbnb, Spotify,
+   — Financials —
+   Visa, Mastercard, S&P Global, Moody's, MSCI Inc, FactSet Research,
+   Verisk Analytics, MarketAxess, CME Group, Intercontinental Exchange,
+   JPMorgan, Berkshire Hathaway, BlackRock, T. Rowe Price,
+   Progressive Corp, Erie Indemnity, Markel, Brown & Brown,
+   — Healthcare —
+   UnitedHealth, Intuitive Surgical, Idexx Laboratories, Zoetis, Danaher,
+   West Pharmaceutical, Bio-Techne, Mettler-Toledo, Waters Corp, Steris,
+   — Industrials / Business Services —
+   Automatic Data Processing, Cintas, Rollins, Illinois Tool Works, Roper Technologies,
+   Fortive, TransDigm, Heico Corp, Graco, Nordson,
+   Copart, Gartner, Axon Enterprise, W.W. Grainger, Accenture,
+   — Consumer —
+   Costco, O'Reilly Automotive, AutoZone, Tractor Supply, Pool Corp,
+   NVR Inc, Winmark Corp, Ulta Beauty,
+   — Global Luxury / Other —
+   LVMH (ADR), Hermès (ADR), Ferrari, Hubbell, Parker Hannifin,
+   Intuit, Fiserv, RLI Corp, Snowflake
+
+   **India stocks (100)**:
+   — IT / Tech Services —
+   TCS, Infosys, Wipro, HCL Technologies, Tech Mahindra,
+   Mphasis, KPIT Technologies, Persistent Systems, Coforge, LTIMindtree,
+   — Banks —
+   HDFC Bank, ICICI Bank, Kotak Mahindra Bank, Axis Bank, SBI,
+   — NBFCs / Financials —
+   Bajaj Finance, Bajaj Finserv, Cholamandalam Investment, Muthoot Finance, Shriram Finance,
+   — Insurance / Capital Markets —
+   SBI Life Insurance, HDFC Life Insurance, ICICI Lombard, CAMS, Nippon India AMC,
+   Angel One, BSE Ltd, CDSL, MCX, 360 One WAM,
+   — FMCG / Consumer Staples —
+   Hindustan Unilever, Nestle India, Britannia Industries, Marico, Dabur India,
+   Colgate-Palmolive India, Godrej Consumer Products, ITC Ltd, Tata Consumer Products, Varun Beverages,
+   — Paints / Specialty Consumer —
+   Asian Paints, Berger Paints, Pidilite Industries, Havells India, Polycab India,
+   — Retail / Branded Consumer —
+   Avenue Supermarts (DMart), Titan Company, Trent, Page Industries, Metro Brands,
+   Vedant Fashions (Manyavar), Jubilant FoodWorks (Domino's India), Westlife Foodworld (McDonald's India),
+   — Healthcare / Pharma —
+   Sun Pharmaceutical, Divi's Laboratories, Dr. Reddy's Laboratories, Cipla, Abbott India,
+   Syngene International, Astral Ltd, Poly Medicure,
+   — Industrials / Capital Goods —
+   Larsen & Toubro, Siemens India, ABB India, Cummins India, SKF India,
+   Schaeffler India, AIA Engineering, Carborundum Universal, Grindwell Norton, Timken India,
+   — Specialty Chemicals —
+   SRF Ltd, Navin Fluorine, Aarti Industries, Deepak Nitrite, Fine Organic Industries,
+   — Autos / Auto Ancillaries —
+   Maruti Suzuki, Bajaj Auto, Eicher Motors (Royal Enfield), TVS Motor, Hero MotoCorp,
+   Sona BLW Precision, Minda Corporation, Motherson Sumi,
+   — Infrastructure / Cement —
+   Reliance Industries, Ultratech Cement, Shree Cement, Dalmia Bharat,
+   — Hotels / Travel —
+   Indian Hotels (Taj), IndiGo (InterGlobe Aviation), Zomato,
+   — Electronics / Manufacturing —
+   Dixon Technologies, Kaynes Technology, Data Patterns, KEI Industries, Campus Activewear,
+   — Others —
+   Torrent Pharmaceuticals, Balkrishna Industries (BKT), IRCTC, Godrej Properties
+
+2. Announce the chosen company to the user: *"🎲 Randomly selected: [Company] ([Exchange: NYSE/NASDAQ/NSE/BSE])"*
+
+3. Proceed with the full research framework below, using that company as the subject.
+
+4. **Random Mode output rule**: After saving the full report to file, output **only** the Final Action Guide section to the user — translated into English — in this exact format:
+
+---
+## 🎲 Random Pick: [Company Name] ([Ticker]) — Action Guide
+
+**Rating**: [⚖️ / ✅ / ❌] [One-line verdict]
+**Current Price**: [price + currency] | **Market Cap**: [value]
+
+| Position | Recommendation |
+|----------|---------------|
+| No position | [what to do] |
+| Existing position | [what to do] |
+| Sell signal | [trigger conditions] |
+| Add signal | [trigger conditions] |
+
+**Buy zone**: [price range]
+**12-month target (base case)**: [price]
+
+> *Full report saved to: [filename]*
+---
+
 对 $ARGUMENTS 进行系统化投资研究分析。
 
 ## 研究框架
@@ -38,6 +138,7 @@
 > - 美股：macrotrends（主）+ stockanalysis（副）
 > - 港股：aastocks（主）+ macrotrends ADR（副）
 > - A股：东方财富（主）+ 巨潮资讯（副）
+> - 印度股（NSE/BSE）：screener.in（主）+ moneycontrol.com（副）；交易所申报文件：nseindia.com / bseindia.com
 
 使用 Task 工具启动后台 Agent，从网络收集以下数据：
 
@@ -201,12 +302,13 @@ python3 ~/ai-berkshire/tools/financial_rigor.py three-scenario \
 1. 所有分析必须有数据支撑，附数据来源
 2. 使用 Markdown 表格呈现关键数据
 3. 每个模块末尾必须有对应大师的"追问"
-4. 最终将完整报告写入 `~/[公司名]投资研究报告.md`
+4. 最终将完整报告写入 `~/Documents/AI Projects/AI Berkshire/[公司名]_Investment_Research.md`（英文文件名）
 5. 结论要明确，不回避给出买入/观望/回避的建议
 6. 估值部分必须给出具体的价格区间
 7. **报告开头**必须包含"信息丰富度评级"（A/B/C）和"AI研究局限性声明"
 8. **报告结尾**必须区分"AI分析置信度"与"投资确定性"——前者取决于资料量，后者取决于生意本质。明确告知读者：本报告的哪些结论基于充分数据，哪些基于有限信息的推理
 9. 如果公司属于C级（信息稀缺），报告末尾必须列出"需要一手验证的问题清单"——建议读者通过田野调查、产品体验、供应链访谈等方式补充AI的盲区
+10. **RANDOM MODE ONLY**: Do NOT display the full report in chat. Save it to file silently. Output ONLY the Action Guide block defined in the Random Mode section above, in English. Nothing else.
 
 ## 数据抽检（准出流程）
 
